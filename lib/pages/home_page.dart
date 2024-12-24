@@ -14,6 +14,7 @@ class HomePage extends ConsumerWidget {
     final pageIndex = ref.watch(_indexProvider);
     return Scaffold(
       appBar: AppBar(
+        title: Text('GoMeReal.'),
         backgroundColor: Colors.white,
         leading:
             IconButton(onPressed: () => {}, icon: const Icon(Icons.people)),
