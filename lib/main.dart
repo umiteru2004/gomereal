@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'GoMeReal.'),
     );
   }
 }
@@ -88,10 +88,18 @@ class _MyHomePageState extends State<MyHomePage> {
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.white,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        leading:
+            IconButton(onPressed: () => {}, icon: const Icon(Icons.people)),
+        actions: [
+          IconButton(
+              onPressed: () => {}, icon: const Icon(Icons.account_circle))
+        ],
+        shape: const Border(
+            bottom: BorderSide(color: Color(0xff818181), width: 1)),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -110,15 +118,25 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            const SizedBox(
+              height: 64,
+              child: Row(
+                children: <Widget>[
+                  Icon(Icons.account_circle),
+                  Text("umiteru2004")
+                ],
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset("images/novaskin-wallpaper-ocean.jpeg"),
             ),
+            const Align(
+              alignment: Alignment.centerRight,
+              child: Icon(Icons.favorite_border),
+            )
           ],
         ),
       ),
@@ -126,7 +144,32 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+            border: Border(top: BorderSide(color: Color(0xff818181), width: 1))),
+        child: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.image),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.location_pin),
+              label: "",
+            ),
+          ],
+          selectedItemColor: Colors.black,
+          backgroundColor: Colors.white,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+        ),
+      ),
+      backgroundColor: Colors.white,
     );
   }
 }
