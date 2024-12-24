@@ -19,7 +19,7 @@ class App extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Hanazome',
       ),
-      home: const HomePage(title: 'GoMeReal.'),
+      home: HomePage(),
     );
   }
 }
