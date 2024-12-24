@@ -16,10 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'GoMeReal.',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        fontFamily: 'Hanazome',
       ),
       home: const MyHomePage(title: 'GoMeReal.'),
     );
@@ -66,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.asset("images/novaskin-wallpaper-ocean.jpeg"),
+              child: Image.asset("assets/images/novaskin-wallpaper-ocean.jpeg"),
             ),
             const Align(
               alignment: Alignment.centerRight,
